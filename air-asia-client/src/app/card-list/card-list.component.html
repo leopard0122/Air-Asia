@@ -1,0 +1,27 @@
+<button mat-button routerLink="/cust-add" routerLinkActive="active" *ngIf="authService.currentUser && authService.currentUser.role=='admin'">Add Customer</button>
+<button mat-button routerLink="/card-add" routerLinkActive="active">Add Card</button>
+
+<div class="container"
+     fxLayout="row wrap" fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="16px grid"
+     fxLayoutGap.xs="0">
+  <div class="item item-1" fxFlex="33%" *ngFor="let item of items; let i = index">
+    <mat-card class="example-card" >
+      <img mat-card-image [src]="item.cardImageUrl || item.image" alt="Photo of {{item.cardName}}" routerData="item" (click)="displayCardDetail(item)">
+      <mat-card-content>
+        <p>
+          {{item.cardName}}
+        </p>
+        <p>
+          ${{item.cardValue}}
+        </p>      
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>Redeem for {{item.points}} Points</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+

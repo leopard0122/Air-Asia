@@ -1,0 +1,28 @@
+<h2>Sign Up</h2>
+<form [formGroup]="registerFormGroup" >
+
+  <div class="container">
+    <label for="email"><b>First Name</b></label>
+    <input type="text" formControlName="firstName" placeholder="Enter First Name" >
+    <label for="email"><b>Last Name</b></label>
+    <input type="text" formControlName="lastName" placeholder="Enter Last Name" >
+
+    <label for="email"><b>Email/Username</b></label>
+    <input type="text" formControlName="email" placeholder="Enter Email" >
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" formControlName="password" placeholder="Enter Password" >
+    <label for="c_password"><b>Confirm Password</b></label>
+    <input type="password" formControlName="c_password" placeholder="Confirm Password" >
+
+    <button (click)="clickedSignUp()">Sign Up</button>
+    <p>Already have an account?</p>
+    <button (click)="clickedLogin()">Login</button>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+
+</form>

@@ -1,0 +1,19 @@
+<p>Card Detail</p>
+<button mat-button (click)="displayCardDeleteComponent()">Delete Card</button>
+<button mat-button (click)="displayCardUpdateComponent()">Update Card</button>
+<button mat-button routerLink="/card-list" routerLinkActive="active"  color="accent">Back</button>
+
+<mat-card class="example-card" >
+    <img mat-card-image [src]="item.image || item.cardImageUrl" alt="Photo of {{item.cardName}}" >
+    <mat-card-content>
+        <p>
+        {{item.cardName}}<br>
+        Type: {{item.cardType}} <br>
+        points: {{item.points}} <br>
+        cardValue: {{item.cardValue}} 
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>Redeem</button>
+    </mat-card-actions>
+</mat-card>

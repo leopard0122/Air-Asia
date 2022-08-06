@@ -1,0 +1,28 @@
+<p>Update Card</p>
+<form class="example-form" [formGroup]="updateCardFormGroup" >
+    <mat-form-field class="example-full-width">
+      <mat-label>Card Name</mat-label>
+      <input matInput formControlName="cardName" placeholder="Ex. Chong Oh" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Card Type</mat-label>
+      <mat-select formControlName="cardType">
+        <mat-option *ngFor="let ctype of cardTypes" [value]="ctype.value">
+          {{ctype.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Card Value</mat-label>
+      <textarea matInput formControlName="cardValue" placeholder="Ex. 10"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Card Points</mat-label>
+      <textarea matInput formControlName="points" placeholder="Ex. 100"></textarea>
+    </mat-form-field>
+</form>
+
+<button mat-button (click)="updateCard()">Update Card</button>

@@ -1,0 +1,17 @@
+<h2>Login Here</h2>
+<form [formGroup]="loginFormGroup" >
+
+  <div class="container">
+    <label for="email"><b>Username</b></label>
+    <input type="text" formControlName="email" placeholder="Enter Email" >
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" formControlName="password" placeholder="Enter Password" >
+
+    <button (click)="clickedLogin()">Login</button>
+    <p>Dont have an account?</p>
+    <button (click)="clickedSignUp()">Sign Up</button>
+  </div>
+
+
+</form>
